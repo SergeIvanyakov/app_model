@@ -1,0 +1,16 @@
+aside {
+        float: left;
+        widht: 20%;
+        padding:2.5%;
+        height: 450vh;
+        border-right:5px, solid black;
+        }
+
+.logo {
+        font-size: 40 px;
+}
+
+p {
+    font-size:22px;
+    text-align: justify;
+}

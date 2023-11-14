@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title> Данные пациента </title>
+        <link rel="stylesheet" href="{% static 'main/css/index1.css' %}">
+        <style>
+            li {margin-top: 20px;}
+        </style>
+    </head>
+    <body>
+        <aside>
+            <img src= "{% static 'main/img/heart.png' %}" height="30" alt="logo">
+            <span class="logo"> <b>Определение ССЗ </b></span>
+            <h3>Навигация</h3>
+            <ul>
+                <a href="/"><li>Главная</li></a>
+                <a href="about"><li>Определение ССЗ</li></a>
+                <a href="metod"><li>Описание метода</li></a>
+            </ul>
+        </aside>
+        <h2>Данные пациента</h2>
+        <form method="post" action="postuser">
+            {% csrf_token %}
+            <p>Имя: <input name="name" value = "Undefined"/></p>
+            <p>Возраст: <input name="age" type="number" value = 20 /></p>
+            <p>Пол:<br>
+                <input type="radio" checked value=1 name="gender" >Женский <br>
+                <input type="radio" value=2 name="gender">Мужской
+            </p>
+            <p>Рост (см): <input name="height" type="number" value = 168 /></p>
+            <p>Вес (кг): <input name="weight" type="number" value = 72 /></p>
+            <p>Систолическое артериальное давление  (мм.рт.ст): <input name="ap_hi" type="number" value = 110 /></p>
+            <p>Диастолическое артериальное давление  (мм.рт.ст): <input name="ap_lo" type="number" value = 70 /></p>
+            <p>Уровень холестерина:<br>
+                <input type="radio" checked value=1 name="cholesterol" >Нормальный <br>
+                <input type="radio" value=2 name="cholesterol">Выше нормы <br>
+                <input type="radio" value=3 name="cholesterol">Намного выше нормы
+            </p>
+            <p>Уровень глюкозы:<br>
+                <input type="radio" checked value=1 name="gluc" >Нормальный <br>
+                <input type="radio" value=2 name="gluc">Выше нормы <br>
+                <input type="radio" value=3 name="gluc">Намного выше нормы
+            </p>
+            <p>Отношение к курению:<br>
+                <input type="radio" checked value=0 name="smoke" >Некурящий <br>
+                <input type="radio" value=1 name="smoke">Курящий
+            </p>
+            <p>Отношение к алкоголю:<br>
+                <input type="radio" checked value=0 name="alco" >Не употребляет алкоголь <br>
+                <input type="radio" value=1 name="alco">Употребляет алкоголь
+            </p>
+            <p>Физическая активность:<br>
+                <input type="radio"  value=0 name="active" >Низкая <br>
+                <input type="radio" checked value=1 name="active">Высокая
+            </p>
+            <p>Сердечно-сосудистые заболевания:<br>
+                <input type="radio" checked value=0 name="cardio" >Отсутствие <br>
+                <input type="radio" value=1 name="cardio">Наличие
+            </p>
+            <input type="submit" value="Расчет" />
+        </form>
+
+    </body>
+</html>
+
