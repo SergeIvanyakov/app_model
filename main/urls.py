@@ -5,5 +5,6 @@ urlpatterns = [
     path('', views.index),
     path('about', views.about),
     path('postuser', views.postuser),
-    path('metod', views.metod)
+    path('metod', views.metod),
+    path('landing', views.landing)
 ]

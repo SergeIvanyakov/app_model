@@ -98,3 +98,7 @@ def postuser(request):
                 <div> <a href='about'>Данные пациента</a> <div>
                 """
     return HttpResponse(output)
+
+def landing(request):
+    peopless = Article.objects.all()
+    return render(request, 'main/landing.html', locals())
